@@ -12,14 +12,14 @@ describe('Null / Undefined / Defined', () => {
 
     test('Happy path: leerProp puede ser defined o undefined', ()  => {
         const obj = {a: 1, b:undefined};
-        expecT(leerProp(obj, 'a')).toBeDefined();
-        expecT(leerProp(obj, 'b')).toBeUndefined();
-        expecT(leerProp(obj, 'c')).toBeUndefined();
+        expect(leerProp(obj, 'a')).toBeDefined();
+        expect(leerProp(obj, 'b')).toBeUndefined();
+        expect(leerProp(obj, 'c')).toBeUndefined();
     })
 
     test('Sad path: parametros invalidos', () => {
         expect(() => buscarAlumno('no array', 'Ana')).toThrow('alumnos debe ser un array');
-        expect(() => buscarAlumno([],'')),toThrow('nombre invalido');
-        expect(() => buscarAlumno({},123)),toThrow('prop invalida');
+        expect(() => buscarAlumno([],'')).toThrow('nombre invalido');
+        expect(() => buscarAlumno({},123)).toThrow('prop invalida');
     })
 })
